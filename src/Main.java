@@ -9,7 +9,6 @@ public class Main
     }
     public static void main(String[] args)
     {
-        Scanner scan = new Scanner(System.in);
 
         Scanner sc = new Scanner(System.in);
 
