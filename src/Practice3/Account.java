@@ -73,7 +73,6 @@ public class Account
         return true;
     }
 
-
     public void display()
     {
         System.out.println("Id: " + this.id);

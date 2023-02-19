@@ -8,12 +8,14 @@ public class Main
         Scanner sc = new Scanner(System.in);
 
         System.out.print("How many number of customers do you want to input? ");
-        int n = sc.nextInt();
-        Account acc[] = new Account[n];
-        for (int i = 0; i < acc.length; i++)
+        int numCustomers = sc.nextInt();
+        Account[] accounts = new Account[numCustomers];
+
+        for (int i = 0; i < accounts.length; i++)
         {
-            acc[i] = new Account();
-            acc[i].display();
+            System.out.printf("Enter details for customer %d\n", i + 1);
+            accounts[i] = new Account();
+            accounts[i].openAccount();
         }
 
         Account open = new Account();
@@ -28,8 +30,9 @@ public class Main
             System.out.println(" ");
             System.out.println("[1] - WITHDRAW");
             System.out.println("[2] - DEPOSIT");
-            System.out.println("[3] - DISPLAY");
-            System.out.println("[4] - EXIT");
+            System.out.println("[3] - SEARCH");
+            System.out.println("[4] - DISPLAY");
+            System.out.println("[5] - EXIT");
             System.out.println(" ");
             System.out.println("ENTER AN OPTION: ");
             choice = sc.nextInt();
@@ -61,8 +64,8 @@ public class Main
                 System.out.print("Enter ID you want to search: ");
                 int acc_ID = sc.nextInt();
                 boolean found = false;
-                for (int i = 0; i < acc.length; i++) {
-                    found = acc[i].search(acc_ID);
+                for (int i = 0; i < accounts.length; i++) {
+                    found = accounts[i].search(acc_ID);
                     if (found) {
                         break;
                     }
@@ -74,9 +77,9 @@ public class Main
 
             else if (choice == 4)
             {
-                for (int i = 0; i < acc.length; i++)
+                for (int i = 0; i < accounts.length; i++)
                 {
-                    acc[i].display();
+                    accounts[i].display();
                 }
                 System.exit(0);
             }
