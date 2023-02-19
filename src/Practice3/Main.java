@@ -7,18 +7,24 @@ public class Main
     {
         Scanner sc = new Scanner(System.in);
 
-        Account testAccount = new Account();
-
-        System.out.print("Enter amount to withdraw: ");
+        System.out.print("Enter ID: ");
         int id = sc.nextInt();
+        System.out.print("Enter Balance: ");
+        double balance = sc.nextDouble();
+        System.out.print("Enter Annual Interest Rate: ");
+        double annualInterestRate = sc.nextDouble();
+
+        Account testAccount = new Account(id, balance, annualInterestRate);
 
         System.out.print("Enter amount to withdraw: ");
         double amountWithdraw = sc.nextDouble();
 
-        if (testAccount.withdraw(amountWithdraw)) {
+        if (testAccount.withdraw(amountWithdraw))
+        {
             System.out.println("Withdraw Successfully");
         }
-        else {
+        else
+        {
             System.out.println("Withdraw not successfully");
         }
 

@@ -14,7 +14,7 @@ public class Account
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
-        dateCreated = new Date();
+        this.dateCreated = new Date();
     }
 
     public int getId()
@@ -70,6 +70,6 @@ public class Account
         System.out.println("Id: " + this.id);
         System.out.println("Balance: " + this.balance);
         System.out.println("Interest Rate: " + this.annualInterestRate);
-        System.out.println("TIME: " + this.dateCreated);
+        System.out.println(this.dateCreated.toString());
     }
 }
