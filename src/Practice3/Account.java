@@ -1,6 +1,7 @@
 package Practice3;
 
 import java.util.Date;
+import java.util.*;
 
 public class Account
 {
@@ -9,11 +10,8 @@ public class Account
     protected double annualInterestRate;
     protected Date dateCreated;
 
-    public Account(int id, double balance, double annualInterestRate)
+    public Account()
     {
-        this.id = id;
-        this.balance = balance;
-        this.annualInterestRate = annualInterestRate;
         this.dateCreated = new Date();
     }
 
@@ -65,11 +63,37 @@ public class Account
         balance += amount;
     }
 
+    public boolean search(int acc_ID)
+    {
+        if (id == acc_ID)
+        {
+            display();
+            return false;
+        }
+        return true;
+    }
+
+
     public void display()
     {
         System.out.println("Id: " + this.id);
         System.out.println("Balance: " + this.balance);
         System.out.println("Interest Rate: " + this.annualInterestRate);
         System.out.println(this.dateCreated.toString());
+    }
+
+    public void openAccount()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Employee ID: ");
+        this.id = sc.nextInt();
+
+        System.out.print("Enter Amount Balance: ");
+        this.balance = sc.nextDouble();
+
+        System.out.print("Enter Annual Interest Rate: ");
+        this.annualInterestRate = sc.nextDouble();
+
+        this.dateCreated = new Date();
     }
 }
