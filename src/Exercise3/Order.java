@@ -1,5 +1,7 @@
 package Exercise3;
 
+import java.util.*;
+
 public class Order
 {
     protected String customerName;
@@ -60,5 +62,24 @@ public class Order
         System.out.println("Quantity Number: " + this.quantityOrdered);
         System.out.println("Unit Price: " + this.unitPrice);
         System.out.println("Total Price: " + this.totalPrice);
+    }
+
+    public void prompt()
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter customer name: ");
+        this.customerName = sc.nextLine();
+
+        System.out.print("Enter customer number: ");
+        this.customerNumber = sc.nextInt();
+
+        System.out.print("Enter quantity ordered: ");
+        this.quantityOrdered = sc.nextInt();
+
+        System.out.print("Enter unit price: ");
+        this.unitPrice = sc.nextDouble();
+
+        computePrice();
     }
 }
